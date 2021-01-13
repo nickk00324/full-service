@@ -1,10 +1,9 @@
-# Elijah Ford Portfolio
+# Full Service Creative
 
 ## about
 
-A portfolio website for the artist Elijah Ford, built with Gatsby, React, Styled Components
-Here's a link! [here](https://elijahford.com)
+Website and branding done for the company Full Service Creative. you should check them out!
 
 ## things to do
 
-- switch out the backend for a proper cms
+- a lot
