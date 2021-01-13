@@ -87,10 +87,14 @@ const WorkView = (props: WorkViewProps) => {
     leave: { opacity: 0 },
   })
 
-  const pageTitle = slug.split("/")[0].split("-")[0]
+  const formatDescription = (desc: string) => {
+    if (desc.includes("<em>")) {
+      const arr = desc.split("<em>")
+      arr.forEach(str => str.includes("</em>"))
+    }
+  }
 
-  console.log(images)
-  console.log(additionalInfo)
+  const pageTitle = slug.split("/")[0].split("-")[0]
 
   return (
     <Layout>
