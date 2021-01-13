@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Gala's Loft",
+    "slug": "galas-loft",
+    "description": "This project entailed building an 18 x 24 ft. loft in the existing studio space of Gala Porras Kim.  On the left side of the building, we installed a concrete staircase that was made with a 2-week mold making process.  Upstairs we installed, stained, and sealed the wood floors, put in 2 new electrical outlets and two overhead lights, and also fitted the front of the loft with a combination steel and glass railing.  Downstairs, we drywalled the ceiling and anchor while and installed track lighting for photographing artworks.",
+    "images": [
+      "./images/galas-loft/1.jpg",
+      "./images/galas-loft/2.jpg",
+      "./images/galas-loft/3.jpg",
+      "./images/galas-loft/4.jpg",
+      "./images/galas-loft/5.jpg",
+      "./images/galas-loft/6.jpg",
+      "./images/galas-loft/7.jpg",
+      "./images/galas-loft/8.jpg",
+      "./images/galas-loft/9.jpg",
+      "./images/galas-loft/10.jpg"
+    ]
+  },
+  {
+    "title": "Lucy's Platforms",
+    "slug": "lucys-platforms",
+    "description": "For Lucy Kerr’s Four Girl Trick dance/choreography work, presented by LA Dance Project at Francois Ghebaly Gallery, we designed and built the two platforms required to hold the performers.",
+    "additionalInfo": "Directed by Lucy Kerr\nPedestals constructed and designed by Kenneth Yuen\nPerformed by Sam Blaz, Kayla Aguila, Julienne Mackey, Kait McKinney, Cacia LaCount, Taylor Unwin, Camila Arana, and Chenhui Mao\nPresented by LA Dance Project at Francois Ghebaly Gallery as part of Physical Educated, curated by Todd McQuade",
+    "images": [
+      "./images/lucys-platforms/1.jpg",
+      "./images/lucys-platforms/2.jpg",
+      "./images/lucys-platforms/3.jpg",
+      "./images/lucys-platforms/4.png",
+      "./images/lucys-platforms/5.jpg"
+    ]
+  },
+  {
+    "title": "Antoine & Anais's Studio",
+    "slug": "antoine-and-anais-studio",
+    "description": "We demolished the existing original shed which had suffered significant damage and deterioration from many years of disuse.  Maintaining the existing concrete foundation slab, we rebuilt a 12 x 16 ft. studio space equipped with double barn doors on the front, a new side window, interior insulation and drywall, overhead lighting, 4 electrical outlets, and new roofing.  This project also included the installation of an outdoor slop sink and an outdoor, fabric shade screen.",
+    "images": [
+      "./images/antoine-and-anais-studio/1.jpeg",
+      "./images/antoine-and-anais-studio/2.jpeg",
+      "./images/antoine-and-anais-studio/3.jpeg",
+      "./images/antoine-and-anais-studio/4.jpeg",
+      "./images/antoine-and-anais-studio/5.jpeg",
+      "./images/antoine-and-anais-studio/6.jpeg"
+    ]
+  },
+  {
+    "title": "Gala's Windows & Gate Reinforcement",
+    "slug": "galas-windows",
+    "description": "After an onsite visit, we welded custom security bar covers for two exterior windows of the studio building.  Additionally, the gate was warping in a way that made it difficult to open and close, so we reinforced the gate to solve the disruption.",
+    "images": [
+      "./images/galas-windows/1.jpeg",
+      "./images/galas-windows/2.jpeg",
+      "./images/galas-windows/3.jpeg",
+      "./images/galas-windows/4.jpeg"
+    ]
+  }
+]
