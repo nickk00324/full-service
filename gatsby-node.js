@@ -10,11 +10,12 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       query MyQuery {
-        allWorksJson {
+        allMarkdownRemark {
           edges {
             node {
-              id
-              slug
+              frontmatter {
+                description
+              }
             }
           }
         }
