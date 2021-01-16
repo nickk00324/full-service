@@ -3,13 +3,6 @@ backend:
   repo: nickk00324/full-service
   branch: main
 
-# media_library:
-#   name: cloudinary
-#   config:
-#     cloud_name: dspqphkii
-#     api_key: 612218668342215
-#     multiple: true
-
 media_folder: data/images
 
 collections:
