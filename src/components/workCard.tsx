@@ -32,10 +32,8 @@ const Card = styled.div`
   }
 `
 
-const Image = styled(Img)`
-  @media only screen and (max-width: 782px) {
-    height: 300px;
-  }
+const ImageContainer = styled.div`
+  height: 266px;
 `
 
 const WorkCard = (props: WorkCardProps) => {
@@ -54,10 +52,9 @@ const WorkCard = (props: WorkCardProps) => {
         onMouseEnter={() => setShowInfo(true)}
         onMouseLeave={() => setShowInfo(false)}
       >
-        <Img
-          fluid={image.childImageSharp.fluid}
-          style={{ maxHeight: "266px" }}
-        />
+        <ImageContainer>
+          <Img fluid={image.childImageSharp.fluid} />
+        </ImageContainer>
         {transitions.map(
           ({ item, props, key }) =>
             item && (

@@ -1,4 +1,28 @@
 const path = require(`path`)
+const { createFilePath } = require("gatsby-source-filesystem")
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemarkFrontmatter implements Node {
+      additionalInfo: String
+    }
+  `
+  createTypes(typeDefs)
+}
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -13,8 +37,9 @@ exports.createPages = ({ graphql, actions }) => {
         allMarkdownRemark {
           edges {
             node {
-              frontmatter {
-                description
+              id
+              fields {
+                slug
               }
             }
           }
@@ -28,10 +53,10 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog post pages.
-    result.data.allWorksJson.edges.forEach(e => {
+    result.data.allMarkdownRemark.edges.forEach(e => {
       createPage({
         // Path for this page — required
-        path: `/projects/${e.node.slug}`,
+        path: `/projects/${e.node.fields.slug}`,
         component: workViewTemplate,
         context: {
           id: e.node.id,

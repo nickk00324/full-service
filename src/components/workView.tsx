@@ -6,10 +6,8 @@ import { useTransition, animated as a } from "react-spring"
 import Layout from "./layout"
 import SEO from "./seo"
 import { useDeviceDetect } from "../utils/useDeviceDetect"
-import Link from "gatsby-plugin-transition-link/AniLink"
-import eye from "../images/eye.png"
-import info from "../images/info.png"
 import Carousel from "./carousel"
+import ReactMarkdown from "react-markdown"
 
 // template page generated automatically for each work
 
@@ -48,36 +46,13 @@ const Info = styled(a.div)`
   }
 `
 
-const MoreInfoButton = styled.div`
-  position: fixed;
-  right: 50px;
-  bottom: 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  transition: all 0.3s;
-  height: 50px;
-  width: 50px;
-
-  img {
-    height: 60px;
-  }
-
-  .info-icon {
-    height: 100px;
-  }
-`
-
 const WorkView = (props: WorkViewProps) => {
   const {
     title,
     description,
     images,
-    slug,
     additionalInfo,
-  } = props.data.worksJson
+  } = props.data.markdownRemark.frontmatter
   const [isShowInfo, setIsShowInfo] = useState(false)
   const { isMobile } = useDeviceDetect()
 
@@ -87,32 +62,21 @@ const WorkView = (props: WorkViewProps) => {
     leave: { opacity: 0 },
   })
 
-  const formatDescription = (desc: string) => {
-    if (desc.includes("<em>")) {
-      const arr = desc.split("<em>")
-      arr.forEach(str => str.includes("</em>"))
-    }
-  }
-
-  const pageTitle = slug.split("/")[0].split("-")[0]
-
   return (
     <Layout>
       <Container>
-        <SEO title={pageTitle} />
+        <SEO title={title} />
         <h1>{title}</h1>
         <Carousel images={images} />
         <Info>
-          <p>{description}</p>
+          <ReactMarkdown>{description}</ReactMarkdown>
           <h2>Description</h2>
         </Info>
         {additionalInfo && (
           <Info>
             <h2>Additional</h2>
             <div className="AddInfo">
-              {additionalInfo.split("\n").map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+              <ReactMarkdown>{additionalInfo}</ReactMarkdown>
             </div>
           </Info>
         )}
@@ -125,15 +89,18 @@ export default WorkView
 
 export const query = graphql`
   query workQ($id: String!) {
-    worksJson(id: { eq: $id }) {
-      title
-      slug
-      description
-      additionalInfo
-      images {
-        childImageSharp {
-          fluid(maxWidth: 1440) {
-            ...GatsbyImageSharpFluid
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        additionalInfo
+        images {
+          absolutePath
+          childImageSharp {
+            fluid(maxWidth: 1440) {
+              ...GatsbyImageSharpFluid
+              src
+            }
           }
         }
       }

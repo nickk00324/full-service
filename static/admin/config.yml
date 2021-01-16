@@ -3,26 +3,30 @@ backend:
   repo: nickk00324/full-service
   branch: main
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: dspqphkii
-    api_key: 612218668342215
-    multiple: true
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: dspqphkii
+#     api_key: 612218668342215
+#     multiple: true
+
+media_folder: data/projects/images
 
 collections:
   - name: project
-    label: Project
+    label: Projects
     folder: data/projects
-    media_folder: assets/images
+    media_folder: /images/{{slug}}
     create: true
     editor:
       preview: false
     fields:
-      - { name: url, label: URL, widget: string }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: description, label: Project Description, widget: markdown }
-      - name: images
-        label: Project Images
-        widget: image
+      - { name: additionalInfo, label: Additional Info, widget: markdown, required: false }
+      - label: "Project Images"
+        name: "images"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: Image, name: image, widget: image}

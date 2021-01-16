@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img, { FluidObject } from "gatsby-image"
 import { useTransition, animated as a } from "react-spring"
+import Link from "gatsby-plugin-transition-link/AniLink"
 
 type CarouselProps = {
   images: [any]
@@ -9,6 +10,10 @@ type CarouselProps = {
 
 const Container = styled.div`
   height: 80%;
+`
+
+const ImageContainer = styled(a.div)`
+  height: 80vh;
   overflow: hidden;
 `
 
@@ -25,12 +30,12 @@ const ArrowsContainer = styled.div`
   }
 `
 
-const ImageContainer = styled.div``
-
 const Carousel = (props: CarouselProps) => {
   const { images } = props
   const [current, setCurrent] = React.useState(0)
   const [isReversing, setIsReversing] = React.useState(false)
+
+  console.log(images)
 
   const handleClick = (direction: string) => {
     if (direction === "up") {
@@ -55,11 +60,11 @@ const Carousel = (props: CarouselProps) => {
   return (
     <Container>
       {transitions.map(({ item, props, key }) => (
-        <a.div key={key} style={props}>
-          <ImageContainer>
+        <Link fade to={images[item].absolutePath}>
+          <ImageContainer key={key} style={props}>
             <Img fluid={images[item].childImageSharp.fluid} />
           </ImageContainer>
-        </a.div>
+        </Link>
       ))}
       <ArrowsContainer>
         <div className="Arrows">

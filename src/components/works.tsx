@@ -30,15 +30,19 @@ const Grid = styled.div`
 const Works = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allWorksJson {
+      allMarkdownRemark {
         edges {
           node {
-            title
-            slug
-            images {
-              childImageSharp {
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              images {
+                childImageSharp {
+                  fluid(maxWidth: 1440) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
@@ -48,18 +52,21 @@ const Works = () => {
     }
   `)
 
-  const allWorks = data.allWorksJson.edges
+  const allWorks = data.allMarkdownRemark.edges
 
   return (
     <Grid>
-      {allWorks.map((w: any) => (
-        <WorkCard
-          title={w.node.title}
-          image={w.node.images[0]}
-          slug={w.node.slug}
-          key={w.node.title}
-        />
-      ))}
+      {allWorks.map((w: any) => {
+        const { title, images, url } = w.node.frontmatter
+        return (
+          <WorkCard
+            title={title}
+            image={images[0]}
+            slug={w.node.fields.slug}
+            key={title}
+          />
+        )
+      })}
     </Grid>
   )
 }
