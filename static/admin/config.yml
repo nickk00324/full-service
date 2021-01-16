@@ -10,13 +10,13 @@ backend:
 #     api_key: 612218668342215
 #     multiple: true
 
-media_folder: data/projects/images
+media_folder: data/images
 
 collections:
   - name: project
     label: Projects
     folder: data/projects
-    media_folder: /images/{{slug}}
+    media_folder: images/{{slug}}
     create: true
     editor:
       preview: false
