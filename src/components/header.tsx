@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Link from "gatsby-plugin-transition-link/AniLink"
 import { animated as a, useTransition } from "react-spring"
+import { Location } from "@reach/router"
 import { useDeviceDetect } from "../utils/useDeviceDetect"
 import CircularLogo from "../images/fsc_circular_logo.svg"
 import HamburgerIcon from "../images/fsc_hamburger.svg"
@@ -51,17 +52,23 @@ const Header = () => {
   })
 
   return (
-    <>
-      {location.pathname !== "/" && (
-        <Container>
-          {transitions.map(({ item, props, key }) => (
-            <HeadersContainer key={key} style={props}>
-              {!isMobile ? <DesktopHeader /> : <MobileHeader />}
-            </HeadersContainer>
-          ))}
-        </Container>
-      )}
-    </>
+    <Location>
+      {({ location }) => {
+        return (
+          <>
+            {location.pathname !== "/" && (
+              <Container>
+                {transitions.map(({ item, props, key }) => (
+                  <HeadersContainer key={key} style={props}>
+                    {!isMobile ? <DesktopHeader /> : <MobileHeader />}
+                  </HeadersContainer>
+                ))}
+              </Container>
+            )}
+          </>
+        )
+      }}
+    </Location>
   )
 }
 

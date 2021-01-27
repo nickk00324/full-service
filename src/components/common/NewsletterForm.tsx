@@ -23,6 +23,7 @@ const Container = styled.div`
 
   input[type="submit"] {
     background-color: black;
+    -webkit-appearance: none;
     color: white;
     height: 46px;
     border: none;

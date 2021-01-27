@@ -9,6 +9,7 @@ import React from "react"
 
 import Header from "./header"
 import styled, { ThemeProvider } from "styled-components"
+import { Location } from "@reach/router"
 import { theme } from "../styles/theme"
 import "../styles/global.css"
 import Footer from "./Footer"
@@ -47,14 +48,18 @@ const Layout = (props: any) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <ContainerContainer>
-        <Header />
-        <LayoutContainer>
-          <main>{props.children}</main>
-        </LayoutContainer>
-        <img className="Layout__lines" src={lines[lineNumber]} />
-        <Footer isLanding={location.pathname === "/"} />
-      </ContainerContainer>
+      <Location>
+        {({ location }) => (
+          <ContainerContainer>
+            <Header />
+            <LayoutContainer>
+              <main>{props.children}</main>
+            </LayoutContainer>
+            <img className="Layout__lines" src={lines[lineNumber]} />
+            <Footer isLanding={location.pathname === "/"} />
+          </ContainerContainer>
+        )}
+      </Location>
     </ThemeProvider>
   )
 }
