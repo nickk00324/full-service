@@ -6,7 +6,7 @@ const Container = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
   flex-wrap: wrap;
   color: ${props => (props.isLanding ? "white" : "black")};
   p {

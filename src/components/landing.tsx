@@ -85,7 +85,7 @@ const Landing = () => {
       transform: "translate(0, -100%)",
     },
     enter: { transform: "translate(0, 0)" },
-    leave: { position: "absolute", transform: "translate(0, 100%)" },
+    leave: { transform: "translate(0, 100%)" },
   })
   return (
     <ContainerContainer>

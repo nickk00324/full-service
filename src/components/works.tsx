@@ -6,22 +6,12 @@ import WorkCard from "./workCard"
 // presentational component for work cards
 
 const Grid = styled.div`
-  height: 100vh;
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(266px, 266px));
   grid-gap: 2rem;
   justify-content: space-between;
-
-  a {
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-    display: block;
-  }
 `
 
 const Works = () => {

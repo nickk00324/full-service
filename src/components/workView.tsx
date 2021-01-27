@@ -51,8 +51,17 @@ const Info = styled(a.div)`
 
   .AddInfo {
     p {
-      padding: 0;
+      padding: 0 0 0 10px;
       margin: 0;
+      @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+        padding: 0;
+      }
+    }
+
+    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+      &:last-child {
+        margin-bottom: 50px;
+      }
     }
   }
 `
@@ -64,14 +73,7 @@ const WorkView = (props: WorkViewProps) => {
     images,
     additionalInfo,
   } = props.data.markdownRemark.frontmatter
-  const [isShowInfo, setIsShowInfo] = useState(false)
   const { isMobile } = useDeviceDetect()
-
-  const transitions = useTransition(isShowInfo, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-  })
 
   return (
     <Layout>

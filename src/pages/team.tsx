@@ -5,10 +5,6 @@ import SEO from "../components/seo"
 import StaticPage from "../components/staticPage"
 import Team from "../components/team"
 
-const StyledContact = styled.div`
-  height: 100vh;
-`
-
 const TeamPage = () => {
   return (
     <Layout>

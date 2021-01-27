@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allMarkdownRemark.edges.forEach(e => {
       createPage({
         // Path for this page — required
-        path: `/projects/${e.node.fields.slug}`,
+        path: `/projects${e.node.fields.slug}`,
         component: workViewTemplate,
         context: {
           id: e.node.id,

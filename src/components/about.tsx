@@ -19,6 +19,9 @@ const Container = styled.div`
       font-size: 36px;
     }
   }
+  p {
+    line-height: 1.6;
+  }
 `
 
 const ServicesContainer = styled.div`

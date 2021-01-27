@@ -31,7 +31,7 @@ const LayoutContainer = styled.div`
   padding: 0 30px 30px;
 
   @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-    padding: 20px;
+    padding: 10px;
   }
 `
 

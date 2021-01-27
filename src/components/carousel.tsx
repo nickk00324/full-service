@@ -10,6 +10,7 @@ type CarouselProps = {
 
 const Container = styled.div`
   height: 80%;
+  overflow: hidden;
 `
 
 const ImageContainer = styled(a.div)`
@@ -132,7 +133,6 @@ const Grid = styled.div`
 `
 
 const AllPhotos = (props: AllPhotosProps) => {
-  console.log(props.images)
   return (
     <Grid>
       {props.images.map(i => (

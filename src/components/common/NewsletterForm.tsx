@@ -7,6 +7,10 @@ const Container = styled.div`
     display: block;
   }
 
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
   input {
     height: 40px;
   }

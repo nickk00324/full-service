@@ -28,6 +28,9 @@ const Container = styled.div`
       font-size: 36px;
     }
   }
+  p {
+    line-height: 1.6;
+  }
 `
 
 const BioContainer = styled.div``
@@ -66,8 +69,6 @@ const InfoContainer = styled.div`
 `
 
 const Team = () => {
-  //TODO add links to details
-
   const { isMobile } = useDeviceDetect()
   return (
     <Container>

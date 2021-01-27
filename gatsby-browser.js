@@ -6,24 +6,24 @@
 
 // You can delete this file if you're not using it
 
-const Provider = require("./provider").default
+// const Provider = require("./provider").default
 
-exports.wrapRootElement = Provider
+// exports.wrapRootElement = Provider
 
-const transitionDelay = 500
+// const transitionDelay = 500
 
-exports.shouldUpdateScroll = ({
-  routerProps: { location },
-  getSavedScrollPosition,
-}) => {
-  if (location.action === "PUSH") {
-    window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
-  } else {
-    const savedPosition = getSavedScrollPosition(location)
-    window.setTimeout(
-      () => window.scrollTo(...(savedPosition || [0, 0])),
-      transitionDelay
-    )
-  }
-  return false
-}
+// exports.shouldUpdateScroll = ({
+//   routerProps: { location },
+//   getSavedScrollPosition,
+// }) => {
+//   if (location.action === "PUSH") {
+//     window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
+//   } else {
+//     const savedPosition = getSavedScrollPosition(location)
+//     window.setTimeout(
+//       () => window.scrollTo(...(savedPosition || [0, 0])),
+//       transitionDelay
+//     )
+//   }
+//   return false
+// }

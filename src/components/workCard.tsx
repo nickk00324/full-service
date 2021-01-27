@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import Image from "gatsby-image"
 import Link from "gatsby-plugin-transition-link/AniLink"
 import { useTransition, animated as a } from "react-spring"
 import { useDeviceDetect } from "../utils/useDeviceDetect"
@@ -15,7 +15,7 @@ type WorkCardProps = {
 
 const Card = styled.div`
   width: 400px;
-  max-height: 266px;
+  height: 266px;
   text-overflow: clip;
   overflow: hidden;
   white-space: nowrap;
@@ -24,7 +24,7 @@ const Card = styled.div`
     width: 350px;
   }
   img {
-    width: 100%;
+    height: 266px;
   }
   p {
     position: relative;
@@ -40,9 +40,17 @@ const Card = styled.div`
     transform: scale(1.02);
   }
   transition: all 0.5s;
+
+  &:last-child {
+    margin-bottom: 200px;
+  }
 `
 
 const ImageContainer = styled.div`
+  height: 100%;
+`
+
+const Img = styled(Image)`
   height: 266px;
 `
 
@@ -59,7 +67,7 @@ const WorkCard = (props: WorkCardProps) => {
     <Card>
       <Link
         fade
-        to={`/projects/${slug}`}
+        to={`/projects${slug}`}
         onMouseEnter={() => setShowInfo(true)}
         onMouseLeave={() => setShowInfo(false)}
       >
