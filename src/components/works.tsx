@@ -6,24 +6,21 @@ import WorkCard from "./workCard"
 // presentational component for work cards
 
 const Grid = styled.div`
+  height: 100vh;
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
   justify-content: space-between;
-  background-color: white;
 
-  @media only screen and (max-width: 810px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 225px;
-  }
-
-  @media only screen and (max-width: 782px) {
-    grid-auto-rows: 300px;
+  a {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: block;
   }
 `
 
@@ -40,7 +37,7 @@ const Works = () => {
               title
               images {
                 childImageSharp {
-                  fluid(maxWidth: 1440) {
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }

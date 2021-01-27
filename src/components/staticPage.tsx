@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { useTransition, animated as a } from "react-spring"
 
 // this is a page wrapper for non-index static pages
 
@@ -7,7 +8,7 @@ const StyledPage = styled.div`
   margin: 0;
 
   @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-    margin: 200px 25px;
+    /* margin: 200px 25px; */
   }
 
   .title {
@@ -16,15 +17,12 @@ const StyledPage = styled.div`
     font-weight: 400;
 
     @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-      left: 50%;
-      justify-content: center;
-      transform: translate(-50%, 0);
-      top: 125px;
+      font-size: 72px;
     }
   }
 `
 
-const Container = styled.div`
+const Container = styled(a.div)`
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   @media only screen and (max-width: ${props => props.theme.mobileSize}) {
@@ -32,6 +30,13 @@ const Container = styled.div`
   }
   p {
     line-height: 1.6;
+  }
+
+  img {
+    position: fixed;
+    bottom: 200px;
+    max-width: none;
+    left: 0;
   }
 
   h2 {
@@ -57,12 +62,24 @@ const Body = styled.div`
 `
 
 const Page = props => {
+  const { title, children } = props
+
+  const transitions = useTransition(true, null, {
+    from: {
+      transform: "translate(0, 100%)",
+    },
+    enter: { transform: "translate(0, 0)" },
+    leave: { transform: "translate(0, -100%)" },
+  })
+
   return (
     <StyledPage>
-      <Container>
-        <h2 className="title">{props.title}</h2>
-        <Body>{props.children}</Body>
-      </Container>
+      {transitions.map(({ item, props, key }) => (
+        <Container key={key} style={props}>
+          <h2 className="title">{title}</h2>
+          <Body>{children}</Body>
+        </Container>
+      ))}
     </StyledPage>
   )
 }

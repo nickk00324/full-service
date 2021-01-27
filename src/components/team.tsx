@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import tealLines from "../images/teal_lines.svg"
+import { useDeviceDetect } from "../utils/useDeviceDetect"
 
 const Container = styled.div`
   h3 {
@@ -8,12 +8,25 @@ const Container = styled.div`
     font-weight: 400;
     margin-top: 0;
   }
+  a {
+    color: #e9286e;
+  }
+
   img {
     position: fixed;
     z-index: -10000;
     left: 0;
-    bottom: 50px;
     max-width: none;
+
+    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+      bottom: 30px;
+    }
+  }
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    h3 {
+      font-size: 36px;
+    }
   }
 `
 
@@ -23,9 +36,20 @@ const SectionContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 72px 0;
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    display: block;
+    margin: 0;
+
+    h3 {
+      margin-top: 20px;
+    }
+  }
   p {
     max-width: 560px;
     text-align: ${props => props.align};
+    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+      text-align: left;
+    }
   }
 `
 
@@ -35,11 +59,16 @@ const InfoContainer = styled.div`
   justify-content: space-between;
   p {
     text-align: ${props => (props.align === "right" ? "left" : "right")};
+    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+      text-align: left;
+    }
   }
 `
 
 const Team = () => {
   //TODO add links to details
+
+  const { isMobile } = useDeviceDetect()
   return (
     <Container>
       <SectionContainer align={"right"}>
@@ -47,9 +76,17 @@ const Team = () => {
           <h3>Casey Baden</h3>
           <div className="Info__details">
             <p>Pronouns: She/Her</p>
-            <p>Website: caseybaden.com</p>
-            <p>Instagram: @casey.baden</p>
-            <p>Email: casey.baden@gmail.com</p>
+            <p>
+              Website: <a href="https://caseybaden.com">caseybaden.com</a>
+            </p>
+            <p>
+              Instagram:{" "}
+              <a href="https://www.instagram.com/casey.baden/">@casey.baden</a>
+            </p>
+            <p>
+              Email:{" "}
+              <a href="mailto:casey.baden@gmail.com">casey.baden@gmail.com</a>
+            </p>
           </div>
         </InfoContainer>
         <BioContainer>
@@ -92,9 +129,32 @@ const Team = () => {
             fellow artists, Minga Opazo.
           </p>
         </BioContainer>
-        <img src={tealLines} />
       </SectionContainer>
       <SectionContainer align={"left"}>
+        {isMobile && (
+          <InfoContainer align={"left"}>
+            <h3>Kenneth Yuen</h3>
+            <div className="Info__details">
+              <p>Pronouns: He/Him</p>
+              <p>
+                Website:{" "}
+                <a href="mailto:worksbykennethyuen@gmail.com">
+                  worksbykennethyuen@gmail.com
+                </a>
+              </p>
+              <p>
+                Instagram:{" "}
+                <a href="https://www.instagram.com/knnt.yn/">@knnt.yn</a>
+              </p>
+              <p>
+                Email:{" "}
+                <a href="mailto:worksbykennethyuen@gmail.com">
+                  worksbykennethyuen@gmail.com
+                </a>
+              </p>
+            </div>
+          </InfoContainer>
+        )}
         <BioContainer>
           <p>
             Kenneth Yuen is a Los Angeles and Vancouver based artist. Yuen
@@ -131,15 +191,30 @@ const Team = () => {
             troubles. For this we are very grateful!
           </p>
         </BioContainer>
-        <InfoContainer align={"left"}>
-          <h3>Kenneth Yuen</h3>
-          <div className="Info__details">
-            <p>Pronouns: He/Him</p>
-            <p>Website: worksbykennethyuen@gmail.com</p>
-            <p>Instagram: @knnt.yn</p>
-            <p>Email: worksbykennethyuen@gmail.com</p>
-          </div>
-        </InfoContainer>
+        {!isMobile && (
+          <InfoContainer align={"left"}>
+            <h3>Kenneth Yuen</h3>
+            <div className="Info__details">
+              <p>Pronouns: He/Him</p>
+              <p>
+                Website:{" "}
+                <a href="mailto:worksbykennethyuen@gmail.com">
+                  worksbykennethyuen@gmail.com
+                </a>
+              </p>
+              <p>
+                Instagram:{" "}
+                <a href="https://www.instagram.com/knnt.yn/">@knnt.yn</a>
+              </p>
+              <p>
+                Email:{" "}
+                <a href="mailto:worksbykennethyuen@gmail.com">
+                  worksbykennethyuen@gmail.com
+                </a>
+              </p>
+            </div>
+          </InfoContainer>
+        )}
       </SectionContainer>
     </Container>
   )

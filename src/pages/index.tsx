@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Main from "../components/main"
 import { myContext } from "../../provider"
+import Landing from "../components/landing"
 
 const IndexPage = () => {
   return (
@@ -12,7 +13,7 @@ const IndexPage = () => {
         return (
           <Layout>
             <SEO title="Main" />
-            <Main {...context} />
+            <Landing />
           </Layout>
         )
       }}

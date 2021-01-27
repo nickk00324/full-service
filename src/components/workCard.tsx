@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Link from "gatsby-plugin-transition-link/AniLink"
 import { useTransition, animated as a } from "react-spring"
+import { useDeviceDetect } from "../utils/useDeviceDetect"
 
 // this component is each individual image on the grid
 
@@ -18,6 +19,10 @@ const Card = styled.div`
   text-overflow: clip;
   overflow: hidden;
   white-space: nowrap;
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    width: 350px;
+  }
   img {
     width: 100%;
   }
@@ -30,6 +35,11 @@ const Card = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+  transition: all 0.5s;
 `
 
 const ImageContainer = styled.div`
@@ -39,6 +49,7 @@ const ImageContainer = styled.div`
 const WorkCard = (props: WorkCardProps) => {
   const { title, slug, image } = props
   const [showInfo, setShowInfo] = React.useState(false)
+  const { isMobile } = useDeviceDetect()
   const transitions = useTransition(showInfo, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -55,13 +66,17 @@ const WorkCard = (props: WorkCardProps) => {
         <ImageContainer>
           <Img fluid={image.childImageSharp.fluid} />
         </ImageContainer>
-        {transitions.map(
-          ({ item, props, key }) =>
-            item && (
-              <a.div key={key} style={props}>
-                <p>{title}</p>
-              </a.div>
-            )
+        {!isMobile ? (
+          transitions.map(
+            ({ item, props, key }) =>
+              item && (
+                <a.div key={key} style={props}>
+                  <p>{title}</p>
+                </a.div>
+              )
+          )
+        ) : (
+          <p>{title}</p>
         )}
       </Link>
     </Card>

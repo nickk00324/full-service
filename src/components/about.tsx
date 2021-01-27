@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import pinkLines from "../images/pink_lines.svg"
+import { useDeviceDetect } from "../utils/useDeviceDetect"
 
 const Container = styled.div`
   h3 {
@@ -13,12 +13,28 @@ const Container = styled.div`
     left: 0;
     max-width: none;
   }
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    h3 {
+      font-size: 36px;
+    }
+  }
 `
 
 const ServicesContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 72px;
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    display: block;
+    margin-top: 0;
+
+    h3 {
+      margin-top: 20px;
+    }
+  }
+
   ul {
     list-style: none;
     padding-left: 0;
@@ -42,9 +58,17 @@ const SectionContainer = styled.div`
     max-width: 560px;
     text-align: right;
   }
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    display: block;
+    p {
+      text-align: left;
+    }
+  }
 `
 
 const About = () => {
+  const { isMobile } = useDeviceDetect()
   return (
     <Container>
       <p>
@@ -63,7 +87,6 @@ const About = () => {
         navigate the infrastructure around being an artist and pursuing
         exhibition.{" "}
       </p>
-      <img src={pinkLines} />
       <SectionContainer>
         <h3>Why Full Service?</h3>
         <p>
@@ -76,6 +99,7 @@ const About = () => {
       </SectionContainer>
       <ServicesContainer>
         <div className="Services_content">
+          {isMobile && <h3>Services</h3>}
           <ul>
             <li>
               Problem solving and consultation for sculptures, installations,
@@ -104,7 +128,7 @@ const About = () => {
             </li>
           </ul>
         </div>
-        <h3>Services</h3>
+        {!isMobile && <h3>Services</h3>}
       </ServicesContainer>
       <SectionContainer>
         <h3>Future Plans</h3>

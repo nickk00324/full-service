@@ -25,8 +25,15 @@ const Container = styled.div`
     font-size: 72px;
     font-weight: 400;
   }
-  @media only screen and (max-width: 1000px) {
-    margin-top: 150px;
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    h1 {
+      font-size: 72px;
+      margin-top: 32px;
+    }
+    h2 {
+      font-size: 36px;
+    }
   }
 `
 const Info = styled(a.div)`
@@ -36,6 +43,10 @@ const Info = styled(a.div)`
 
   p {
     max-width: 540px;
+  }
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    display: block;
   }
 
   .AddInfo {
@@ -69,8 +80,9 @@ const WorkView = (props: WorkViewProps) => {
         <h1>{title}</h1>
         <Carousel images={images} />
         <Info>
+          {isMobile && <h2>Description</h2>}
           <ReactMarkdown>{description}</ReactMarkdown>
-          <h2>Description</h2>
+          {!isMobile && <h2>Description</h2>}
         </Info>
         {additionalInfo && (
           <Info>
@@ -97,7 +109,7 @@ export const query = graphql`
         images {
           absolutePath
           childImageSharp {
-            fluid(maxWidth: 1440) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
               src
             }

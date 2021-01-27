@@ -4,6 +4,7 @@ html,
 body {
   margin: 0 auto;
   font-family: "Helvetica Neue", sans-serif;
+  overflow: visible;
 }
 
 a {
@@ -14,8 +15,17 @@ a {
 
 a:hover {
   transition: all 0.5s;
+  color: #3dbeb6;
 }
 
 h1 {
   font-size: 36px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.tl-edges {
+  overflow-x: visible;
 }
