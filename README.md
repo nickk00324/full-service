@@ -6,4 +6,4 @@ Website and branding done for the company Full Service Creative. you should chec
 
 ## things to do
 
-- a lot
+- nothing i thing i do
