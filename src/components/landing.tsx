@@ -159,7 +159,7 @@ type SlideShowProps = {
 }
 
 const ImageHolder = styled.div`
-  height: 118vh;
+  height: 120vh;
   width: 100vw;
   position: absolute;
   top: 0;

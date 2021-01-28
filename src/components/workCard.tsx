@@ -31,7 +31,7 @@ const Card = styled.div`
     top: -166px;
     left: -30px;
     font-size: 96px;
-    color: #eee;
+    color: #ffffff;
     margin: 0;
     padding: 0;
   }

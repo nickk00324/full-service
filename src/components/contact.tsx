@@ -3,7 +3,11 @@ import styled from "styled-components"
 import NewsletterForm from "./common/NewsletterForm"
 
 const Container = styled.div`
-  height: 100vh;
+  height: 70vh;
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   img {
     position: fixed;
     z-index: -10000;
@@ -15,35 +19,50 @@ const Container = styled.div`
   .ContactBlurb {
     max-width: 600px;
   }
+
+  @media only screen and (max-width: 1040px) {
+    display: block;
+  }
 `
 
 const Contact = () => {
   return (
     <Container>
-      <p>
-        p. <a href="tel:17136280921">713.628.0921</a>
-      </p>
-      <p>
-        e.{" "}
-        <a href="mailto:fullservice.creative@gmail.com">
-          fullservice.creative@gmail.com
-        </a>
-      </p>
-      <p>
-        a.{" "}
-        <a href="https://www.google.com/maps/search/?api=1&query=34.040131819002376, -118.31496986647286">
-          2421 W Washington Blvd. Los Angeles, CA 90018
-        </a>
-      </p>
-      <p className="ContactBlurb">
-        For project requests, please reach out to us at{" "}
-        <a href="mailto:fullservice.creative@gmail.com">
-          fullservice.creative@gmail.com
-        </a>
-        . We suggest including the following detailed specifications: materials,
-        dimensions, time frame, ideal budget, location, and project context.{" "}
-      </p>
-      <NewsletterForm />
+      <div className="Links">
+        <p>
+          p. <a href="tel:17136280921">713.628.0921</a>
+        </p>
+        <p>
+          e.{" "}
+          <a href="mailto:fullservice.creative@gmail.com">
+            fullservice.creative@gmail.com
+          </a>
+        </p>
+        <p>
+          a.{" "}
+          <a href="https://www.google.com/maps/search/?api=1&query=34.040131819002376, -118.31496986647286">
+            2421 W Washington Blvd. Los Angeles, CA 90018
+          </a>
+        </p>
+        <p>
+          i.{" "}
+          <a href="https://www.instagram.com/__fullservice__/">
+            __fullservice__
+          </a>
+        </p>
+      </div>
+      <div className="Contact">
+        <p className="ContactBlurb">
+          For project requests, please reach out to us at{" "}
+          <a href="mailto:fullservice.creative@gmail.com">
+            fullservice.creative@gmail.com
+          </a>
+          . We suggest including the following detailed specifications:
+          materials, dimensions, time frame, ideal budget, location, and project
+          context.{" "}
+        </p>
+        <NewsletterForm />
+      </div>
     </Container>
   )
 }

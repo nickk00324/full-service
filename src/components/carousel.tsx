@@ -14,7 +14,7 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled(a.div)`
-  height: 70vh;
+  /* height: 70vh; */
   overflow: scroll;
 
   &::-webkit-scrollbar {
@@ -44,7 +44,18 @@ const ArrowsContainer = styled.div`
   }
 `
 
-const Image = styled(Img)``
+const Image = styled(Img)`
+  width: 50%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 800px) {
+    width: 60%;
+  }
+
+  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    width: 70%;
+  }
+`
 
 const Carousel = (props: CarouselProps) => {
   const { images } = props
