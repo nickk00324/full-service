@@ -147,8 +147,8 @@ const Team = () => {
               <p>Pronouns: He/Him</p>
               <p>
                 Website:{" "}
-                <a href="mailto:worksbykennethyuen@gmail.com">
-                  worksbykennethyuen@gmail.com
+                <a href="https://www.worksbykennethyuen.com/">
+                  worksbykennethyuen.com
                 </a>
               </p>
               <p>
@@ -210,8 +210,8 @@ const Team = () => {
               <p>Pronouns: He/Him</p>
               <p>
                 Website:{" "}
-                <a href="mailto:worksbykennethyuen@gmail.com">
-                  worksbykennethyuen@gmail.com
+                <a href="https://www.worksbykennethyuen.com/">
+                  worksbykennethyuen.com
                 </a>
               </p>
               <p>
