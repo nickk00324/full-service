@@ -9,10 +9,10 @@ description: We demolished the existing original shed which had suffered
   roofing.  This project also included the installation of an outdoor slop sink
   and an outdoor, fabric shade screen.
 images:
-  - images/antoine-and-anaiss-studio/1.jpeg
-  - images/antoine-and-anaiss-studio/2.jpeg
-  - images/antoine-and-anaiss-studio/3.jpeg
-  - images/antoine-and-anaiss-studio/4.jpeg
-  - images/antoine-and-anaiss-studio/5.jpeg
-  - images/antoine-and-anaiss-studio/6.jpeg
+  - images/antoine-and-anaiss-studio/1.jpg
+  - images/antoine-and-anaiss-studio/2.jpg
+  - images/antoine-and-anaiss-studio/3.jpg
+  - images/antoine-and-anaiss-studio/4.jpg
+  - images/antoine-and-anaiss-studio/5.jpg
+  - images/antoine-and-anaiss-studio/6.jpg
 ---
