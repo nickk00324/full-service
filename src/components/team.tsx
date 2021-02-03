@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { useDeviceDetect } from "../utils/useDeviceDetect"
+import CaseyPhoto from "../images/casey_rect.jpg"
+import KennethPhoto from "../images/kenneth_rect.jpg"
 
 const Container = styled.div`
   h3 {
@@ -10,17 +12,6 @@ const Container = styled.div`
   }
   a {
     color: #e9286e;
-  }
-
-  img {
-    position: fixed;
-    z-index: -10000;
-    left: 0;
-    max-width: none;
-
-    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
-      bottom: 30px;
-    }
   }
 
   @media only screen and (max-width: ${props => props.theme.mobileSize}) {
@@ -39,7 +30,7 @@ const SectionContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 72px 0;
-  @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+  @media only screen and (max-width: 900px) {
     display: block;
     margin: 0;
 
@@ -50,7 +41,7 @@ const SectionContainer = styled.div`
   p {
     max-width: 560px;
     text-align: ${props => props.align};
-    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    @media only screen and (max-width: 900px) {
       text-align: left;
     }
   }
@@ -62,8 +53,19 @@ const InfoContainer = styled.div`
   justify-content: space-between;
   p {
     text-align: ${props => (props.align === "right" ? "left" : "right")};
-    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+    @media only screen and (max-width: 900px) {
       text-align: left;
+    }
+  }
+`
+
+const TeamPhoto = styled.div`
+  text-align: ${props => (props.align === "right" ? "right" : "left")};
+  img {
+    width: 400px;
+
+    @media only screen and (max-width: ${props => props.theme.mobileSize}) {
+      width: 300px;
     }
   }
 `
@@ -75,6 +77,9 @@ const Team = () => {
       <SectionContainer align={"right"}>
         <InfoContainer align={"right"}>
           <h3>Casey Baden</h3>
+          <TeamPhoto>
+            <img src={CaseyPhoto} alt={"casey"} />
+          </TeamPhoto>
           <div className="Info__details">
             <p>Pronouns: She/Her</p>
             <p>
@@ -135,6 +140,9 @@ const Team = () => {
         {isMobile && (
           <InfoContainer align={"left"}>
             <h3>Kenneth Yuen</h3>
+            <TeamPhoto>
+              <img src={KennethPhoto} alt={"kenneth"} />
+            </TeamPhoto>
             <div className="Info__details">
               <p>Pronouns: He/Him</p>
               <p>
@@ -195,6 +203,9 @@ const Team = () => {
         {!isMobile && (
           <InfoContainer align={"left"}>
             <h3>Kenneth Yuen</h3>
+            <TeamPhoto align={"right"}>
+              <img src={KennethPhoto} alt={"kenneth"} />
+            </TeamPhoto>
             <div className="Info__details">
               <p>Pronouns: He/Him</p>
               <p>
