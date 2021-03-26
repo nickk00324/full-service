@@ -100,7 +100,10 @@ const DesktopHeader = () => {
   return (
     <DesktopHeaderContainer>
       <ContentContainer>
-        <Link to="/projects">Projects</Link>
+        <div>
+          <Link to="/projects">Projects</Link>/
+          <Link to="/exhibition">Exhibition</Link>
+        </div>
         <Link to="/about">About</Link>
         <Link to="/">
           <img className="Logo" src={CircularLogo} />
@@ -120,7 +123,7 @@ const Links = styled(a.div)`
   text-align: right;
   right: 20px;
   top: 85px;
-  width: 100px;
+  width: 200px;
 
   a {
     padding: 5px 0;
@@ -170,7 +173,10 @@ const MobileHeader = () => {
           ({ item, key, props }) =>
             item && (
               <Links key={key} style={props}>
-                <Link to="/projects">Projects</Link>
+                <div>
+                  <Link to="/projects">Projects</Link>/
+                  <Link to="/exhibition">Exhibition</Link>
+                </div>
                 <Link to="/about">About</Link>
                 <Link to="/team">Team</Link>
                 <Link to="/contact">Contact</Link>

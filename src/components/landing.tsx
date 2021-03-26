@@ -145,8 +145,10 @@ const HeaderContainer = styled.div`
 const LandingHeader = () => {
   return (
     <HeaderContainer>
-      {" "}
-      <Link to="/projects">Projects</Link>
+      <div>
+        <Link to="/projects">Projects</Link>/
+        <Link to="/exhibition">Exhibition</Link>
+      </div>
       <Link to="/about">About</Link>
       <Link to="/team">Team</Link>
       <Link to="/contact">Contact</Link>
