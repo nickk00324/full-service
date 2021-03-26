@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useTransition, animated as a } from "react-spring"
-import { isExternalModuleNameRelative } from "typescript"
+import { Location } from "@reach/router"
 
 // this is a page wrapper for non-index static pages
 
@@ -11,7 +11,7 @@ const StyledPage = styled.div`
 
   .title {
     margin: 0;
-    font-size: 96px;
+    font-size: ${props => (props.isExhibition ? "72px" : "96px")};
     font-weight: 400;
 
     @media only screen and (max-width: ${props => props.theme.mobileSize}) {
@@ -38,14 +38,20 @@ const Page = props => {
   })
 
   return (
-    <StyledPage>
-      {transitions.map(({ item, props, key }) => (
-        <Container key={key} style={props}>
-          <h2 className="title">{title}</h2>
-          <Body>{children}</Body>
-        </Container>
-      ))}
-    </StyledPage>
+    <Location>
+      {({ location }) => {
+        return (
+          <StyledPage isExhibition={location.pathname === "/exhibition"}>
+            {transitions.map(({ item, props, key }) => (
+              <Container key={key} style={props}>
+                <h2 className="title">{title}</h2>
+                <Body>{children}</Body>
+              </Container>
+            ))}
+          </StyledPage>
+        )
+      }}
+    </Location>
   )
 }
 
