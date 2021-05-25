@@ -41,8 +41,8 @@ const Footer = (props: FooterProps) => {
         </p>
         <p>
           a.{" "}
-          <a href="https://www.google.com/maps/search/?api=1&query=34.040131819002376, -118.31496986647286">
-            2421 W Washington Blvd. Los Angeles, CA 90018
+          <a href="https://www.google.com/maps/place/4180+E+Washington+Blvd,+Commerce,+CA+90023/@33.9888084,-118.2068583,13z/">
+            4180 E Washington Blvd. Commerce, CA 90023
           </a>
         </p>
         <p>

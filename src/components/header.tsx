@@ -100,10 +100,11 @@ const DesktopHeader = () => {
   return (
     <DesktopHeaderContainer>
       <ContentContainer>
-        <div>
+        {/* <div>
           <Link to="/projects">Projects</Link>/
           <Link to="/exhibition">Exhibition</Link>
-        </div>
+        </div> */}
+        <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>
         <Link to="/">
           <img className="Logo" src={CircularLogo} />
@@ -173,10 +174,11 @@ const MobileHeader = () => {
           ({ item, key, props }) =>
             item && (
               <Links key={key} style={props}>
-                <div>
+                {/* <div>
                   <Link to="/projects">Projects</Link>/
                   <Link to="/exhibition">Exhibition</Link>
-                </div>
+                </div> */}
+                <Link to="/projects">Projects</Link>
                 <Link to="/about">About</Link>
                 <Link to="/team">Team</Link>
                 <Link to="/contact">Contact</Link>

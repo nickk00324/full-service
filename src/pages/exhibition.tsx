@@ -8,10 +8,11 @@ import Exhibition from "../components/exhibition"
 const ExhibitionsPage = () => {
   return (
     <Layout>
-      <SEO title="Exhibition" />
+      {/* <SEO title="Exhibition" />
       <StaticPage title="quarter life">
         <Exhibition />
-      </StaticPage>
+      </StaticPage> */}
+      <p>theres nothing here, that's weird</p>
     </Layout>
   )
 }
