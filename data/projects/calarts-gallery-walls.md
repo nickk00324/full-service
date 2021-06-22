@@ -11,4 +11,8 @@ images:
   - images/calarts-gallery-walls/calarts-walls_2_sm.jpg
   - images/calarts-gallery-walls/calarts-walls_3_sm.jpg
   - images/calarts-gallery-walls/calarts-walls_4_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_5_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_6_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_7_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_8_sm.jpg
 ---
