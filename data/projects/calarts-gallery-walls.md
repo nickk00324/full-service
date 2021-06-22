@@ -8,4 +8,7 @@ description: In order to offer the 2021 graduating class of CalArts some option
   space for the graduates.
 images:
   - images/calarts-gallery-walls/calarts-walls_1_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_2_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_3_sm.jpg
+  - images/calarts-gallery-walls/calarts-walls_4_sm.jpg
 ---
