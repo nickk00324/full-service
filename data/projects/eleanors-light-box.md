@@ -1,12 +1,10 @@
 ---
 date: 2021-06-28T04:46:35.835Z
 title: Eleanor's Light Box
-description: >-
-  For Eleanor’s graduate MFA thesis exhibition at CalArts, *The Ladder is Always
-  There*, we fabricated a custom LED light box.  
-
-
-  Artwork Title:
+description: For Eleanor’s graduate MFA thesis exhibition at CalArts, *The
+  Ladder is Always There*, we fabricated a custom LED light box.
+additionalInfo: >-
+  Artwork Title/Credit:
 
 
   Eleanor Francis,** *Untitled (Honeymoon),*** 2021, Backlit Graphic Print, Wood Lightbox; 52x10x66
