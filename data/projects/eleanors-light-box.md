@@ -16,4 +16,8 @@ images:
   - images/eleanors-light-box/3.jpg
   - images/eleanors-light-box/4.jpg
   - images/eleanors-light-box/5.jpg
+  - images/eleanors-light-box/6.jpg
+  - images/eleanors-light-box/7.jpg
+  - images/eleanors-light-box/8.jpg
+  - images/eleanors-light-box/9.jpg
 ---
