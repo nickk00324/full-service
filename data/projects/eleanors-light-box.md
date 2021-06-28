@@ -6,7 +6,7 @@ description: >-
   There*, we fabricated a custom LED light box.  
 
 
-  Exhibition/Artwork credit: 
+  Artwork Title:
 
 
   Eleanor Francis,** *Untitled (Honeymoon),*** 2021, Backlit Graphic Print, Wood Lightbox; 52x10x66
