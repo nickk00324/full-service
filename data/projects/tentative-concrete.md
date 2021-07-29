@@ -13,9 +13,17 @@ description: >-
 
 
   Part of *Autonomous Design* at The MAK Center for Art & Architecture, May 1 - September 12
-
-
-  Cecilie Bendixen and Sophus Ejler Jepsen’s project *TENTATIVE CONCRETE* is a durational performance of translation and construction, responding to the restrictions of the COVID-19 travel ban. Two concrete installations will be constructed and installed over the next seven weeks, one in the backyard of the Schindler House and the other in the artists’ own garden. Each week, Bendixen and Jepsen share haptic and tactile instructions with Casey Baden and Kenneth Yuen of Full Service Creative, who will interpret and build the concrete and burlap structures trademark of Bendixen’s practice. Visitors are invited to view the fabrications in real time, every Saturday from 11am – 3pm, between May 1st to June 12th.
+additionalInfo: >-
+  Cecilie Bendixen and Sophus Ejler Jepsen’s project *TENTATIVE CONCRETE* is a
+  durational performance of translation and construction, responding to the
+  restrictions of the COVID-19 travel ban. Two concrete installations will be
+  constructed and installed over the next seven weeks, one in the backyard of
+  the Schindler House and the other in the artists’ own garden. Each week,
+  Bendixen and Jepsen share haptic and tactile instructions with Casey Baden and
+  Kenneth Yuen of Full Service Creative, who will interpret and build the
+  concrete and burlap structures trademark of Bendixen’s practice. Visitors are
+  invited to view the fabrications in real time, every Saturday from 11am – 3pm,
+  between May 1st to June 12th.
 
 
   <https://makcenter.org/programming/autonomous-design/>
