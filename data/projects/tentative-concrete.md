@@ -25,6 +25,9 @@ additionalInfo: >-
 
 
   Part of *Autonomous Design* at The MAK Center for Art & Architecture, May 1 - September 12, 2021
+
+
+  <https://makcenter.org/programming/tentative-concrete-artist-talk/>
 images:
   - images/tentative-concrete/_r3a5891.jpg
   - images/tentative-concrete/_r3a5909.jpg
