@@ -76,8 +76,8 @@ const About = () => {
     <Container>
       <p>
         Full Service is an artist-run, 1,500 square foot custom fabrication shop
-        located in Mid-City, Los Angeles, founded and operated by Casey Baden
-        and Kenneth Yuen. Our goal at Full Service is to bring a range of
+        located in Mid-City, Los Angeles, founded and operated by Casey Baden. 
+        Our goal at Full Service is to bring a range of
         original projects for artists and creatives to fruition, and to provide
         services for those who may not have access to the equipment needed to
         fully realize aspects of their artistic practice. With our wide-ranging
