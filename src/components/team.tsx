@@ -118,10 +118,10 @@ const Team = () => {
             {" "}
             At Full Service, Baden utilizes her wide ranging artistic and
             employment experiences to fulfill a multi-dimensional role as a
-            small business co-owner/co-founder. Baden is the primary
+            small business owner. Baden is the primary
             correspondence manager, she develops quotes and estimates for
             project pricing, handles all budgeting, accounting, and general
-            office management, while also serving as a secondary fabricator. She
+            office management, while also serving as a fabricator. She
             is involved on all Full Service projects from both the front and
             back ends of production. For projects specializing in soft materials
             – fibers, upholstery, and even clay - she is the lead fabricator.{" "}
